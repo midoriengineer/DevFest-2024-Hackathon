@@ -1,25 +1,151 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React, { useState, useEffect } from 'react'
+import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import { ChatContainer, MessageList, Message, MessageInput, MainContainer, TypingIndicator } from '@chatscope/chat-ui-kit-react';
+import OpenAI from 'openai';
+import logo from './logo.png';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+
+      <Logo />
+      <br></br>
+      <Chat />
+    </>
+  )
 }
 
 export default App;
+
+function Logo() {
+  return (
+    <div style={{ justifyContent: "center", display: "flex" }}>
+      <img src={logo} alt="Logo" style={{ maxWidth: "100px" }} />
+
+
+    </div>
+
+  )
+}
+
+function Chat() {
+
+  //VARIABLES-------------------------------------------------------------------
+  const [openai, setOpenAI] = useState("")
+  const [typing, setTyping] = useState(false);
+  let splitMessages = []
+  const [messages, setMessages] = useState([
+    {
+      message: "What did you eat today?",
+      sender: "bot"
+
+    }])
+
+
+  //FUNCTIONS-------------------------------------------------------------------
+
+  async function handleSendMessage(message) {
+    const newMessage = { message: message, sender: "You", direction: "outgoing" }
+    const newMessages = [...messages, newMessage]
+
+    setMessages(newMessages)
+    setTyping(true)
+
+    await handleMessage(newMessages)
+  }
+
+  async function handleMessage(chatMessages) {
+    let messagesFromApi = chatMessages.map((messageObject) => {
+
+      let role = ""
+      if (messageObject.sender === "You") {
+        role = "user"
+      } else {
+        role = "assistant"
+      }
+      return {
+        role: role,
+        content: messageObject.message
+      }
+    })
+
+    const messageToSystem = {
+      role: "system",
+      content: "If I do not answer with what I ate today, Do not respond. Please tell me that my input is invalid and ask me 'What did you eat today?'."
+    }
+
+    const requestToApi = {
+      "model": "gpt-3.5-turbo",
+      "messages": [messageToSystem, ...messagesFromApi]
+
+    }
+
+    await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${openai.apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(requestToApi)
+    }).then((res) => { return res.json() }).then((data) => {
+      splitMessages = data.choices[0].message.content.split('\n')
+    }
+    )
+    for (const message of splitMessages) {
+      await printMessages(message);
+    }
+    setTyping(false)
+    splitMessages = []
+  }
+
+  async function printMessages(message) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const newMessage = { message: message, sender: "bot", direction: "incoming" }
+
+        if (message.length > 0) {
+          setMessages((chatMessages) => [...chatMessages, newMessage])
+        }
+        resolve()
+      }, 1000)
+    })
+  }
+
+
+  useEffect(() => {
+    fetch("/api/key", {
+      method: 'GET',
+      mode: 'cors'
+    })
+      .then(response => response.json())
+      .then(data => {
+        setOpenAI(new OpenAI({ apiKey: data.key, dangerouslyAllowBrowser: true }));
+      })
+      .catch(error => console.error('Error:', error));
+  }, [])
+
+  return (
+    <div style={{ position: "relative", height: "550px", backgroundColor: "#F8F8F8"}}>
+
+      <MainContainer>
+        <ChatContainer>
+          <MessageList
+            scrollBehavior="smooth"
+            typingIndicator={typing ? <TypingIndicator content="Bot is typing" /> : null}>
+            {messages.map((message, i) => {
+              return (
+                <Message key={i} model={message} />
+              )
+            })}
+          </MessageList>
+          <MessageInput placeholder={"Type your message here"} onSend={handleSendMessage} attachButton={false} />
+
+
+        </ChatContainer>
+      </MainContainer>
+    </div>
+  )
+} 

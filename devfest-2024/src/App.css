@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+/* MESSAGE COLORS */
+.cs-message--outgoing .cs-message__content {
+  background-color: #00B6A6 !important;
+  margin-right: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cs-message__content{
+  background-color: #E9E9E9 !important;
+  margin-left: 10px;
+
+}
+.cs-message--incoming .cs-message__content {
+  background-color: #E9E9E9 !important;
+  margin-left: 10px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cs-message__content-wrapper {
+  margin: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* BACKGROUND COLOR */
+.cs-message-list{
+  background-color: #F8F8F8 !important;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* MESSAGE INPUT */
+.cs-chat-container .cs-message-input {
+  border-top: solid 1px #F8F8F8;
+  border-right: solid 0px #F8F8F8;
+  border-bottom: solid 0px #F8F8F8;
+  border-left: solid 0px #F8F8F8;
+  margin-top: auto;
+  padding: .3em 0 .3em 0em;
+  color: rgba(0,0,0,.87);
+  background-color: #F8F8F8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cs-message-input__content-editor{
+  background-color: #E9E9E9 !important;
 }
+.cs-message-input__content-editor-wrapper{
+  background-color: #E9E9E9 !important;
+}
+
+.cs-button--send {
+  color: #00B6A6 !important;
+}
+
+.cs-button--attachment {
+  color: #00B6A6;
+}
+
+
+/* TYPE INDICATOR */
+
+.cs-typing-indicator__text {
+  color: #00B6A6 !important;
+  background-color: #F8F8F8 !important;
+
+}
+
+.cs-typing-indicator {
+  background-color: #F8F8F8 !important;
+
+}
+.cs-typing-indicator__dot {
+  background-color: #00B6A6 !important;
+}
+
+.cs-message-list__typing-indicator-container {
+  background-color: #F8F8F8 !important;
+}
+
+
+/* CHAT TITLE */
+.cs-main-container {
+  border-color: #F8F8F8 !important;
+}
+.chat-title {
+  color: #00B6A6;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: #F8F8F8 !important;
+  margin: 0;
+  padding: 30px;
+}  
+
+/* SCROLLBAR */
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #00B6A6;
+}
+
+.ps__thumb-y {
+  background-color: #00B6A6;
+}
+
