@@ -8,6 +8,11 @@ function Home() {
       <Header/>
       <br></br>
 
+      <div className="background-container">
+      <br></br>
+
+      <br></br>
+
   <div className="container">
         <h1 className="title">Welcome to NutriPet</h1>
         <p className="subtitle">
@@ -21,6 +26,7 @@ function Home() {
         <Link to="/shop">
           <button className="shop-button">Go to GreenPaws Refuge</button>
         </Link>
+      </div>
       </div>
     </>
   );

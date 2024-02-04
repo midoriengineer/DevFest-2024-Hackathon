@@ -20,6 +20,10 @@ function Shop() {
     <Header/>
       <br></br>
 
+      <div className="background-container">
+      <br></br>
+
+      <br></br>
     <Container>
       <Row className="justify-content-md-center">
         <Col xs={12} md={4}>
@@ -105,6 +109,7 @@ function Shop() {
         </Col>
       </Row>
     </Container>
+    </div>
     </>
   );
 }
