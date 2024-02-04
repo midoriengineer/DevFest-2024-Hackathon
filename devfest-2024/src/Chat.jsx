@@ -72,8 +72,8 @@ To get started, why don't you tell me what you ate today?`,
         const messageToSystem = {
             role: "system",
             content: `
-      ${JSON.stringify(messages)}.\n The above is our conversation history.
-      I am the sender "You" and you are the sender "NutriPet."
+      ${JSON.stringify(messages)}.\n The above is our conversation history. 
+      I am the sender "You" and you are the sender "NutriPet." 
       Please reference our previous messages when creating new messages. \n
 
         If my response is off-topic or fails to answer the question you asked, please tell me that my input is invalid and ask me 'What did you eat today?@'. \n
@@ -85,18 +85,18 @@ To get started, why don't you tell me what you ate today?`,
         The story should avoid general language.
         The story should be an extremely specific with details and should only be 1-2 sentences long maximum. \n
 
-        The responses have to make sense based on the kind of animal ${animal.name} is.
-        Also, if I don't mention the food is grass-fed, cage-free, sustainable, local, etc., assume it is not.
-        Omit information that involves how the story was created or breaks the illusion of the story, such as "scores", "story", "I asked you to tell me the positive or negative affects" or " there is a random chance that ${animal.name} will die."
+        The responses have to make sense based on the kind of animal ${animal.name} is. 
+        Also, if I don't mention the food is grass-fed, cage-free, sustainable, local, etc., assume it is not. 
+        Omit information that involves how the story was created or breaks the immersion of the story, such as "scores", "story", "I asked you to tell me the positive or negative affects" or " there is a random chance that ${animal.name} will die." 
         Each story much be unique and different from previous messages.\n
 
-        For the story, only one of the following three sentences are true:
-        If ${health} is greater than 69, the enviornmental damage is minimal.
-        If ${health} is less than 70 and ${health} is greater than 40, the the enviornmental damage is moderate.
-        If ${health} is less than 41, the the enviornmental damage is severe and there is a random chance that ${animal.name} will die.\n
+        For the story, only one of the following three sentences are true:\n
+        If ${health} is greater than 69, the enviornmental damage is minimal.\n
+        If ${health} is less than 70 and ${health} is greater than 40, the the enviornmental damage is moderate.\n
+        If ${health} is less than 41, the the enviornmental damage is severe and ${animal.name} will die.\n
 
         
-        At the end of ALL of your responses, write a JSON object as a string with the following structure EXACTLY as shown below including the @ symbol:
+        At the end of ALL of your responses, write a JSON object as a string with the following structure EXACTLY as shown below including the @ symbol:\n
         @{
             isPetDead: true or false,
             isEnvironmentalEffectNegative: true or false
