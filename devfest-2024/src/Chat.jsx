@@ -90,7 +90,7 @@ To get started, why don't you tell me what you ate today?`,
         Omit information that involves how the story was created or breaks the immersion of the story, such as "scores", "story", "I asked you to tell me the positive or negative affects" or " there is a random chance that ${animal.name} will die." 
         Each story much be unique and different from previous messages.\n
 
-        For the story, only one of the following three sentences are true:\n
+        For the story, only one of the following three sentences is true:\n
         If ${health} is greater than 69, the enviornmental damage is minimal.\n
         If ${health} is less than 70 and ${health} is greater than 40, the the enviornmental damage is moderate.\n
         If ${health} is less than 41, the the enviornmental damage is severe and ${animal.name} will die.\n
