@@ -24,7 +24,9 @@ function Shop() {
       <br></br>
 
       <br></br>
-    <Container>
+    <Container className="content-container">
+<h1 className="title" style={{fontWeight: "500"}}>Choose a Pet:</h1>
+
       <Row className="justify-content-md-center">
         <Col xs={12} md={4}>
           <Card>
@@ -55,6 +57,10 @@ function Shop() {
           </Card>
         </Col>
 
+        <br></br>
+        <br></br>
+        <hr></hr>
+
         <Col xs={12} md={4}>
           <Card>
             <Image
@@ -81,6 +87,11 @@ function Shop() {
             </Card.Body>
           </Card>
         </Col>
+
+        <br></br>
+        <br></br>
+
+<hr></hr>
         <Col xs={12} md={4}>
           <Card>
             <Image
@@ -106,9 +117,13 @@ function Shop() {
               </Button>
             </Card.Body>
           </Card>
+          <br></br>
+        <br></br>
         </Col>
       </Row>
     </Container>
+    <br></br>
+    <br></br>
     </div>
     </>
   );
