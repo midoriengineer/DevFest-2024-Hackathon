@@ -14,7 +14,7 @@ function Home() {
       <br></br>
 
   <div className="container">
-        <h1 className="title">Welcome to NutriPet</h1>
+        <h1 className="title" style={{fontWeight: "500"}}>Welcome to NutriPet!</h1>
         <p className="subtitle">
           Adopt a virtual pet, learn sustainable eating habits with NutriPet.
         </p>
