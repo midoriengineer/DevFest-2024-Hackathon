@@ -96,7 +96,7 @@ To get started, why don't you tell me what you ate today?`,
         If ${health} is less than 41, the the enviornmental damage is severe and ${animal.name} will die.\n
 
         
-        At the end of ALL of your responses, write a JSON object as a string with the following structure EXACTLY as shown below including the @ symbol:\n
+        End of ALL of your responses with a JSON object as a string structured EXACTLY as shown below(including the @ symbol):\n
         @{
             isPetDead: true or false,
             isEnvironmentalEffectNegative: true or false
