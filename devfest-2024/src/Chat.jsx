@@ -82,8 +82,9 @@ To get started, why don't you tell me what you ate today?`,
 
         Based on what I ate, tell me the positive or negative effect my eating habits had on the environment,
         and how the effected environment affected my ${animal.animal} in the form of a short story in the past tense;
-        The story should be an extremely specific with details and should only be 1-2 sentences long maximum.
         The story should avoid general language.
+        The story should be an extremely specific with details and should only be 1-2 sentences long maximum. \n
+
         The responses have to make sense based on the kind of animal ${animal.name} is.
         Also, if I don't mention the food is grass-fed, cage-free, sustainable, local, etc., assume it is not.
         Omit information that involves how the story was created or breaks the illusion of the story, such as "scores", "story", "I asked you to tell me the positive or negative affects" or " there is a random chance that ${animal.name} will die."
