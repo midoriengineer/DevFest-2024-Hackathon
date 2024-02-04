@@ -2,7 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
-  background-color: beige;
+  /* background-color: beige; */
   font-family: "Roboto", sans-serif;
 }
 .cs-message--outgoing .cs-message__content {
@@ -95,4 +95,46 @@
 
 .ps__thumb-y {
   background-color: #00b6a6;
+}
+
+
+/* HOME */
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8;
+}
+
+.title {
+  color: #00b6a6;
+}
+
+.subtitle {
+  color: #555;
+}
+
+.description {
+  margin-top: 20px;
+  color: #777;
+}
+
+.shop-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-button:hover {
+  background-color: #45a049;
 }

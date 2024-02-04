@@ -1,6 +1,7 @@
 // Import React and the components from React Bootstrap
 import React from "react";
 import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
+import Header from "./Header";
 
 // Import the images of the animals from the assets folder
 import penguinImage from "./assets/penguin.gif";
@@ -15,7 +16,10 @@ function Shop() {
   };
 
   return (
-    // Use the Container component as a wrapper for the page
+<>
+    <Header/>
+      <br></br>
+
     <Container>
       <Row className="justify-content-md-center">
         <Col xs={12} md={4}>
@@ -28,7 +32,7 @@ function Shop() {
             />
 
             <Card.Body>
-              <Card.Title>Oscar the Penguin</Card.Title>
+              <Card.Title><h1 className="title">Oscar the Penguin</h1></Card.Title>
               <Card.Text>
                 Penguins are flightless birds that live in the Southern
                 Hemisphere. They are excellent swimmers and feed on fish and
@@ -36,11 +40,12 @@ function Shop() {
               </Card.Text>
 
               <Button
+              className="shop-button"
                 variant="primary"
                 size="lg"
                 onClick={() => handleAdopt("penguin")}
               >
-                Adopt
+                Adopt me!
               </Button>
             </Card.Body>
           </Card>
@@ -55,18 +60,19 @@ function Shop() {
               rounded
             />
             <Card.Body>
-              <Card.Title>Sally The Turtle</Card.Title>
+              <Card.Title><h1 className="title">Sally The Turtle</h1></Card.Title>
               <Card.Text>
                 Turtles are reptiles that have a hard shell to protect them from
                 predators. They can live in freshwater, saltwater, or on land.
                 They are omnivorous and eat plants and animals.
               </Card.Text>
               <Button
+              className="shop-button"
                 variant="primary"
                 size="lg"
                 onClick={() => handleAdopt("turtle")}
               >
-                Adopt
+                Adopt me!
               </Button>
             </Card.Body>
           </Card>
@@ -80,24 +86,26 @@ function Shop() {
               rounded
             />
             <Card.Body>
-              <Card.Title>Kuromi the Bunny</Card.Title>
+              <Card.Title><h1 className="title">Kuromi the Bunny</h1></Card.Title>
               <Card.Text>
                 Bunnies are small mammals that belong to the order Lagomorpha.
                 They have long ears, fluffy tails, and strong hind legs. They
                 are herbivorous and eat grass, hay, and vegetables.
               </Card.Text>
               <Button
+              className="shop-button"
                 variant="primary"
                 size="lg"
                 onClick={() => handleAdopt("bunny")}
               >
-                Adopt
+                Adopt me!
               </Button>
             </Card.Body>
           </Card>
         </Col>
       </Row>
     </Container>
+    </>
   );
 }
 

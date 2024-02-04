@@ -68,11 +68,11 @@ import Header from "./Header.jsx";
 
         My pet is a ${animal} named ${name}. The current health of the environment is ${health}.
 
-        Based on what I ate, tell me the effect my eating habits had on the environment,
+        Based on what I ate, tell me the positive or negative effect my eating habits had on the environment,
         and how the effected environment affected my ${animal} in the form of a short story in the past tense.
         Please describe a extremely specific scenario rather than using general language. This story is only to be 1-2 sentences long.
 
-        
+
 
         If ${health} is less than 3, there is a random chance that my ${animal} will die.
         `,
