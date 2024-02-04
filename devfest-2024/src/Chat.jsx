@@ -13,7 +13,7 @@ import Header from "./Header.jsx";
 
 function Chat() {
   //VARIABLES-------------------------------------------------------------------
-  const animal = localStorage.getItem("animal");
+  const animal = JSON.parse(localStorage.getItem("animal"));
 
   const openai = new OpenAI({
     apiKey: process.env.REACT_APP_API_KEY,
@@ -23,7 +23,7 @@ function Chat() {
   let splitMessages = [];
   const [messages, setMessages] = useState([
     {
-      message: `Congratulations on adopting ${animal.name} Hi! What did you eat today?`,
+      message: `Congratulations on adopting ${animal.name}! What did you eat today?`,
       sender: "NutriPet",
     },
   ]);

@@ -12,8 +12,7 @@ function Shop() {
   // Define a function that handles the adoption of an animal
   const handleAdopt = (animal) => {
     // Perform some actions, such as adding the animal to the cart, updating the state, or navigating to another page
-    localStorage.setItem("animal", animal);
-    console.log(`You have adopted a ${animal}!`);
+    localStorage.setItem("animal", JSON.stringify(animal));
   };
 
   return (
