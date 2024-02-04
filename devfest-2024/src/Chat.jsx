@@ -73,7 +73,7 @@ To get started, why don't you tell me what you ate today?`,
             role: "system",
             content: `
       ${JSON.stringify(messages)}.\n The above is our conversation history.
-      I am the sender "You" and you are the sender "bot."
+      I am the sender "You" and you are the sender "NutriPet."
       Please reference our previous messages when creating new messages. \n
 
         If my response is off-topic or fails to answer the question you asked, please tell me that my input is invalid and ask me 'What did you eat today?@'. \n
@@ -85,7 +85,7 @@ To get started, why don't you tell me what you ate today?`,
         The story should be an extremely specific with details and should only be 1-2 sentences long maximum.
         The story should avoid general language.
         The responses have to make sense based on the kind of animal ${animal.name} is.
-        Also, if I don't mention the food is grass-fed, cage-free, sustainable, etc., assume it is not.
+        Also, if I don't mention the food is grass-fed, cage-free, sustainable, local, etc., assume it is not.
         Omit information that involves how the story was created or breaks the illusion of the story, such as "scores", "story", "I asked you to tell me the positive or negative affects" or " there is a random chance that ${animal.name} will die."
         Each story much be unique and different from previous messages.\n
 
@@ -95,7 +95,7 @@ To get started, why don't you tell me what you ate today?`,
         If ${health} is less than 41, the the enviornmental damage is severe and there is a random chance that ${animal.name} will die.\n
 
         
-        At the end of ALL of your responses, write a JSON object as a string with the following structure EXACTLY as shown below:
+        At the end of ALL of your responses, write a JSON object as a string with the following structure EXACTLY as shown below including the @ symbol:
         @{
             isPetDead: true or false,
             isEnvironmentalEffectNegative: true or false
@@ -126,7 +126,7 @@ To get started, why don't you tell me what you ate today?`,
         await printMessages(resMessages[0]);
         console.log(resMessages)
         console.log(resMessages[1])
-        if (resMessages[1] != undefined) {
+        if (resMessages[1] != undefined && resMessages[1] != null && resMessages[1] != "") {
             if(JSON.parse(resMessages[1]).isPetDead){
                 setDead(true);
             }
@@ -134,6 +134,7 @@ To get started, why don't you tell me what you ate today?`,
                 let newHealth = health - 40;
                 if(newHealth < 0){
                     setHealth(0);
+                    setDead(true)
                 }
                 else{
                     setHealth(newHealth);
@@ -153,7 +154,7 @@ To get started, why don't you tell me what you ate today?`,
             setTimeout(() => {
                 const newMessage = {
                     message: message,
-                    sender: "bot",
+                    sender: "NutriPet",
                     direction: "incoming",
                 };
 
@@ -167,7 +168,10 @@ To get started, why don't you tell me what you ate today?`,
 
     return (
         <>
+              <div className="background-container" style={{height:"120px", backgroundPosition: "top", filter: `grayscale(${100-health}%)`}}>
+
             <Header />
+            </div>
 
             <br></br>
 
@@ -198,7 +202,7 @@ To get started, why don't you tell me what you ate today?`,
 
             </Row>
             <Row style={{justifyContent:"center"}}>
-            <div style={{ padding: "0 50px" }}><h3>Environment Health</h3>
+            <div style={{ padding: "0 20px" }}><h3>Environment Health {health > 40 ? "☺" : "☹"}</h3>
                     <Line percent={health} strokeWidth={1} strokeColor={health > 40 ? "#4caf50" : "#b60000"} />
                     </div>
                 <br></br>
@@ -217,14 +221,14 @@ To get started, why don't you tell me what you ate today?`,
                         <ChatContainer>
                             <MessageList
                                 typingIndicator={
-                                    typing ? <TypingIndicator content="Bot is typing" /> : null
+                                    typing ? <TypingIndicator content="NutriPet is typing" /> : null
                                 }
                             >
                                 <Message model={messages[messages.length-1]} />
                             
                             </MessageList>
                             <MessageInput
-                                placeholder={"Type your message here"}
+                                placeholder={"Enter food here"}
                                 onSend={handleSendMessage}
                                 attachButton={false}
                                 disabled={dead}

@@ -7,17 +7,21 @@
   font-weight: 300;
 }
 .cs-message--outgoing .cs-message__content {
-  background-color: #00b6a6 !important;
+  background-color: #1c1c1c !important;
   margin-right: 10px;
 }
 
 .cs-message__content {
-  background-color: #e9e9e9 !important;
+  background-color: #1c1c1c !important;
   margin-left: 10px;
 }
 .cs-message--incoming .cs-message__content {
-  background-color: #e9e9e9 !important;
+  background-color: #1c1c1c !important;
   margin-left: 10px;
+}
+
+.cs-message__html-content {
+  color: #01c4b4;
 }
 
 .cs-message__content-wrapper {
@@ -26,7 +30,11 @@
 
 /* BACKGROUND COLOR */
 .cs-message-list {
-  background-color: #f8f8f8 !important;
+  background-color: #1c1c1c !important;
+}
+.cs-main-container{
+  border: solid 2px #1c1c1c !important;
+  border-radius: 10px;
 }
 
 /* MESSAGE INPUT */
@@ -42,10 +50,10 @@
 }
 
 .cs-message-input__content-editor {
-  background-color: #e9e9e9 !important;
+  background-color: #fff !important;
 }
 .cs-message-input__content-editor-wrapper {
-  background-color: #e9e9e9 !important;
+  background-color: #fff !important;
 }
 
 .cs-button--send {
@@ -60,31 +68,18 @@
 
 .cs-typing-indicator__text {
   color: #00b6a6 !important;
-  background-color: #f8f8f8 !important;
+  background-color: #1c1c1c !important;
 }
 
 .cs-typing-indicator {
-  background-color: #f8f8f8 !important;
+  background-color: #1c1c1c !important;
 }
 .cs-typing-indicator__dot {
   background-color: #00b6a6 !important;
 }
 
 .cs-message-list__typing-indicator-container {
-  background-color: #f8f8f8 !important;
-}
-
-/* CHAT TITLE */
-.cs-main-container {
-  border-color: #f8f8f8 !important;
-}
-.chat-title {
-  color: #00b6a6;
-  font-weight: bold;
-  font-size: 1.5em;
-  background-color: #f8f8f8 !important;
-  margin: 0;
-  padding: 30px;
+  background-color: #1c1c1c !important;
 }
 
 /* SCROLLBAR */
