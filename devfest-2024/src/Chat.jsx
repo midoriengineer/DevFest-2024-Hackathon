@@ -23,7 +23,8 @@ function Chat() {
   let splitMessages = [];
   const [messages, setMessages] = useState([
     {
-      message: `Congratulations on adopting ${animal.name}! What did you eat today?`,
+      message: `Congratulations on adopting ${animal.name}! I know you will give them a great life. 
+To get started, why don't you tell me what you ate today?`,
       sender: "NutriPet",
     },
   ]);
@@ -62,8 +63,7 @@ function Chat() {
     const messageToSystem = {
       role: "system",
       content: `You have asked me 'What did you eat today?'. 
-        If my response does not answer the question, do not respond. 
-        Please tell me that my input is invalid and ask me 'What did you eat today?'. 
+        Only answer if my response is related to food. Else repeat the question. 
 
         My pet is a ${animal.animal} named ${animal.name}. The current health of the environment is ${health}.
 
