@@ -3,16 +3,22 @@ import React from "react";
 import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
 import Header from "./Header";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Chat from "./Chat";
+
 // Import the images of the animals from the assets folder
 import penguinImage from "./assets/penguin.gif";
 import turtleImage from "./assets/turtle.gif";
 import bunnyImage from "./assets/bunny.gif";
-
+import { useNavigate } from "react-router-dom";
 function Shop() {
+  const navigate = useNavigate();
   // Define a function that handles the adoption of an animal
   const handleAdopt = (animal) => {
     // Perform some actions, such as adding the animal to the cart, updating the state, or navigating to another page
     localStorage.setItem("animal", JSON.stringify(animal));
+    navigate("/chat");
   };
 
   return (
