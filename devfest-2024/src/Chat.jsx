@@ -57,15 +57,24 @@ import Header from "./Header.jsx";
           content: messageObject.message,
         };
       });
+      const name = "Sally"
       const animal = "turtle";
+      let health = 0
       const messageToSystem = {
         role: "system",
-        content: `My pet is a ${animal} If I do not answer with what I ate today, Do not respond. 
+        content: `You have asked me 'What did you eat today?'. 
+        If my response does not answer the question, do not respond. 
         Please tell me that my input is invalid and ask me 'What did you eat today?'. 
-        Tell me the effect my eating habits has on on the environment. 
-        Will the environmental effect be postiive or negative for my ${animal} and if 
-        the outcome is positive or negative for the environment itself
-        The food is only for me not for my${animal} Tell me the consequences as a story in which my ${animal} is a character.
+
+        My pet is a ${animal} named ${name}. The current health of the environment is ${health}.
+
+        Based on what I ate, tell me the effect my eating habits had on the environment,
+        and how the effected environment affected my ${animal} in the form of a short story in the past tense.
+        Please describe a extremely specific scenario rather than using general language. This story is only to be 1-2 sentences long.
+
+        
+
+        If ${health} is less than 3, there is a random chance that my ${animal} will die.
         `,
       };
   
