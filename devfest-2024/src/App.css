@@ -1,99 +1,98 @@
 /* MESSAGE COLORS */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  background-color: beige;
+  font-family: "Roboto", sans-serif;
+}
 .cs-message--outgoing .cs-message__content {
-  background-color: #00B6A6 !important;
+  background-color: #00b6a6 !important;
   margin-right: 10px;
 }
 
-.cs-message__content{
-  background-color: #E9E9E9 !important;
+.cs-message__content {
+  background-color: #e9e9e9 !important;
   margin-left: 10px;
-
 }
 .cs-message--incoming .cs-message__content {
-  background-color: #E9E9E9 !important;
+  background-color: #e9e9e9 !important;
   margin-left: 10px;
-
 }
 
 .cs-message__content-wrapper {
   margin: 10px 0;
 }
 
-
 /* BACKGROUND COLOR */
-.cs-message-list{
-  background-color: #F8F8F8 !important;
+.cs-message-list {
+  background-color: #f8f8f8 !important;
 }
-
 
 /* MESSAGE INPUT */
 .cs-chat-container .cs-message-input {
-  border-top: solid 1px #F8F8F8;
-  border-right: solid 0px #F8F8F8;
-  border-bottom: solid 0px #F8F8F8;
-  border-left: solid 0px #F8F8F8;
+  border-top: solid 1px #f8f8f8;
+  border-right: solid 0px #f8f8f8;
+  border-bottom: solid 0px #f8f8f8;
+  border-left: solid 0px #f8f8f8;
   margin-top: auto;
-  padding: .3em 0 .3em 0em;
-  color: rgba(0,0,0,.87);
-  background-color: #F8F8F8;
+  padding: 0.3em 0 0.3em 0em;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f8f8f8;
 }
 
-.cs-message-input__content-editor{
-  background-color: #E9E9E9 !important;
+.cs-message-input__content-editor {
+  background-color: #e9e9e9 !important;
 }
-.cs-message-input__content-editor-wrapper{
-  background-color: #E9E9E9 !important;
+.cs-message-input__content-editor-wrapper {
+  background-color: #e9e9e9 !important;
 }
 
 .cs-button--send {
-  color: #00B6A6 !important;
+  color: #00b6a6 !important;
 }
 
 .cs-button--attachment {
-  color: #00B6A6;
+  color: #00b6a6;
 }
-
 
 /* TYPE INDICATOR */
 
 .cs-typing-indicator__text {
-  color: #00B6A6 !important;
-  background-color: #F8F8F8 !important;
-
+  color: #00b6a6 !important;
+  background-color: #f8f8f8 !important;
 }
 
 .cs-typing-indicator {
-  background-color: #F8F8F8 !important;
-
+  background-color: #f8f8f8 !important;
 }
 .cs-typing-indicator__dot {
-  background-color: #00B6A6 !important;
+  background-color: #00b6a6 !important;
 }
 
 .cs-message-list__typing-indicator-container {
-  background-color: #F8F8F8 !important;
+  background-color: #f8f8f8 !important;
 }
-
 
 /* CHAT TITLE */
 .cs-main-container {
-  border-color: #F8F8F8 !important;
+  border-color: #f8f8f8 !important;
 }
 .chat-title {
-  color: #00B6A6;
+  color: #00b6a6;
   font-weight: bold;
   font-size: 1.5em;
-  background-color: #F8F8F8 !important;
+  background-color: #f8f8f8 !important;
   margin: 0;
   padding: 30px;
-}  
+}
 
 /* SCROLLBAR */
-.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
-  background-color: #00B6A6;
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #00b6a6;
 }
 
 .ps__thumb-y {
-  background-color: #00B6A6;
+  background-color: #00b6a6;
 }
-

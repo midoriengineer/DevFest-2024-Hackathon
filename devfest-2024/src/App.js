@@ -1,11 +1,19 @@
 import "./App.css";
 import Chat from "./Chat.jsx";
-//import home from "./Home.jsx";
+import Home from "./Home.jsx";
+import Shop from "./Shop.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Chat />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/shop" element={<Shop />} />
+          <Route exact path="/chat" element={<Chat />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
