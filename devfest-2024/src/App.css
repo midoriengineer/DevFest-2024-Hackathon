@@ -101,9 +101,8 @@
 
 /* HOME */
 
-.container {
+.home-container {
   text-align: center;
-  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
@@ -157,5 +156,4 @@ hr {
   background-repeat: no-repeat;
   height: 100vh; 
   overflow: hidden; 
-  overflow-y: auto;
 }

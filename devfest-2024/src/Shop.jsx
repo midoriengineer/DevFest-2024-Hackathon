@@ -30,18 +30,18 @@ function Shop() {
         <br></br>
 
         <br></br>
-        <Container className="content-container">
+        <Container className="home-container" style={{maxWidth:"1000px !important"}}>
           <h1 className="title" style={{ fontWeight: "500" }}>
             Choose a Pet:
           </h1>
 
-          <Row className="justify-content-md-center">
-            <Col xs={12} md={4}>
-              <Card>
+          <Row>
+            <Col>
+              <Card className="align-items-center">
                 <Image
                   src={penguinImage}
                   alt="Penguin"
-                  style={{ height: 300, width: 300 }}
+                  style={{ height: 200, width: 200 }}
                   rounded
                 />
 
@@ -63,6 +63,7 @@ function Shop() {
                       handleAdopt({
                         animal: "penguin",
                         name: "Oscar",
+                        image:"./assets/penguin.gif"
                       })
                     }
                   >
@@ -72,16 +73,12 @@ function Shop() {
               </Card>
             </Col>
 
-            <br></br>
-            <br></br>
-            <hr></hr>
-
-            <Col xs={12} md={4}>
-              <Card>
+            <Col>
+              <Card className="align-items-center">
                 <Image
                   src={turtleImage}
                   alt="Turtle"
-                  style={{ height: 300, width: 300 }}
+                  style={{ height: 200, width: 200 }}
                   rounded
                 />
                 <Card.Body>
@@ -101,6 +98,7 @@ function Shop() {
                       handleAdopt({
                         animal: "turtle",
                         name: "Sally",
+                        image:"./assets/turtle.gif"
                       })
                     }
                   >
@@ -110,16 +108,12 @@ function Shop() {
               </Card>
             </Col>
 
-            <br></br>
-            <br></br>
-
-            <hr></hr>
-            <Col xs={12} md={4}>
-              <Card>
+            <Col>
+              <Card className="align-items-center">
                 <Image
                   src={bunnyImage}
                   alt="Bunny"
-                  style={{ height: 300, width: 300 }}
+                  style={{ height: 200, width: 200 }}
                   rounded
                 />
                 <Card.Body>
@@ -140,6 +134,7 @@ function Shop() {
                       handleAdopt({
                         animal: "bunny",
                         name: "Kuromi",
+                        image:"./assets/bunny.gif"
                       })
                     }
                   >
