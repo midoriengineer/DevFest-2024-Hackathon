@@ -6,7 +6,7 @@ CORS(app)
 
 @app.route('/api/key')
 def hello_world():
-    return jsonify(key='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')
+    return jsonify(key='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')
 
 
 if __name__ == '__main__':
